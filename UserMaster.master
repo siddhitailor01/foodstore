@@ -1,0 +1,793 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserMaster.master.cs" Inherits="UserMaster" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head id="Head1" runat="server">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>FoodStore – Find Best Restaurants, Cafes & Street Food Near You</title>
+
+<meta name="description" content="FoodStore helps you discover the best restaurants, cafes, street food & local food stores near you with menus, reviews, ratings & locations." />
+
+<meta name="keywords" content="
+foodstore,
+restaurants near me,
+best restaurants in india,
+cafes near me,
+street food near me,
+local food stores,
+food delivery partners,
+restaurant menu online,
+best food in my city,
+top rated restaurants,
+foodstore india,
+restaurants in rajasthan,
+restaurants in ajmer,
+restaurants in bhilwara
+" />
+
+<meta name="author" content="FoodStore" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#cb4f24" />
+
+<meta property="og:title" content="FoodStore – Discover Local Food & Restaurants" />
+<meta property="og:description" content="Find top-rated restaurants, cafes & street food in your city. View menus, reviews & locations on FoodStore." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.foodstore.in/" />
+<meta property="og:image" content="https://www.foodstore.in/assets/images/og-foodstore.jpg" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="FoodStore – Best Restaurants Near You" />
+<meta name="twitter:description" content="Explore restaurants, cafes & street food with menus, ratings & reviews on FoodStore." />
+<meta name="twitter:image" content="https://www.foodstore.in/assets/images/og-foodstore.jpg" />   
+     <link rel="shortcut icon" href="assets/images/faviconn.png" />
+    <link href="assets/libs/tiny-slider/tiny-slider.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" id="bootstrap_style" class="theme-opt" rel="stylesheet" type="text/css" />
+    <link href="assets/libs/remixicon/fonts/remixicon.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/style.min.css" id="color_opt" class="theme-opt" rel="stylesheet" type="text/css" />
+
+
+       <style>
+
+
+            .logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;          /* IMPORTANT */
+    display: flex;
+    align-items: center;
+}
+
+.logo-food {
+    color: rgb(203.15, 79.9, 36.55);
+}
+
+.logo-store {
+    color: #000;
+}
+
+.footer-logo-text {
+    font-size: 22px;                       /* footer me thoda smaller */
+    font-weight: 700;
+    line-height: 1;
+}
+
+.footer-logo-food {
+    color: rgb(203.15, 79.9, 36.55);
+}
+
+.footer-logo-store {
+    color: #fff;          /* footer dark bg hoga to white best */
+}
+
+@media (min-width: 425px) and (max-width: 503px) {
+    #topnav .container {
+        display: flex !important;
+        align-items: center !important;
+        /* Ise center ya flex-start kar sakte hain agar gap bilkul khatam karna ho */
+        justify-content: flex-start !important; 
+        flex-wrap: nowrap !important;
+        padding: 5px 10px !important;
+    }
+
+    /* Logo (Order 1) */
+    .logo { 
+        order: 1; 
+        flex-shrink: 0; 
+        margin-right: 10px !important; /* Logo ke baad thoda gap */
+    }
+
+    /* Location (Order 2) */
+    .menu-location { 
+        order: 2; 
+        flex-shrink: 0; 
+        margin-right: 8px !important; /* Location aur Search ke beech ka gap yahan se control hoga */
+    }
+    
+    /* Buttons Group (Order 3) */
+    .buy-button {
+        order: 3;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important; 
+        /* IMPORTANT: margin-left: auto ko hata diya taaki gap khatam ho jaye */
+        margin-left: 0 !important; 
+        margin-right: 8px !important;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* Toggle/Hamburger (Order 4) */
+    .menu-extras {
+        order: 4;
+        margin-left: auto !important; /* Toggle ko sabse last (right corner) mein rakhne ke liye */
+        flex-shrink: 0;
+    }
+
+    /* Baaki settings same rahengi */
+    .logo-text { font-size: 19px !important; }
+    .btn-sm { padding: 4px 6px !important; font-size: 11px !important; }
+    .buy-button a[href*="register.aspx"] { font-size: 0 !important; }
+    .buy-button a[href*="register.aspx"]::before { content: "Partner"; font-size: 11px !important; }
+    .menu-location .ms-1 { display: none !important; }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    /* Container ko flex banayein taaki elements move kar sakein */
+    #topnav .container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap !important;
+        padding: 10px 15px;
+    }
+
+    /* Sabse pehle Logo (Order 1) */
+    .logo {
+        order: 1;
+        flex-shrink: 0;
+    }
+
+    /* Beach mein Location (Order 2) */
+    .menu-location {
+        order: 2;
+        margin-left: 10px;
+    }
+
+    /* Buttons (Search, Partner, Login) (Order 3) */
+    .buy-button {
+        order: 3;
+        display: flex !important;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto !important; /* Isse buttons right side push ho jayenge */
+        margin-right: 10px !important;
+        padding: 0;
+        list-style: none;
+    }
+
+    /* Toggle/Hamburger (Order 4 - Sabse Last) */
+    .menu-extras {
+        order: 4;
+        position: relative !important;
+        margin: 0 !important;
+        display: block !important;
+    }
+
+    /* Button sizes ko control karein taaki ek line mein fit ho jayein */
+    .btn-sm {
+        padding: 5px 10px !important;
+        font-size: 12px !important;
+        white-space: nowrap;
+    }
+
+    /* Mobile par "Select Location" text hide karke sirf icon dikhayein */
+    .menu-location .ms-1 {
+        display: none !important;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1200px) {
+    /* Location label ka text hide karein */
+    .menu-location span.ms-1 {
+        display: none !important;
+    }
+
+    /* Location icon ke saath jo gap hai use reset karein */
+    .menu-location .align-items-center {
+        gap: 0 !important;
+    }
+}
+
+        </style>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+      
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+
+            <div class="modal fade" id="SearchLocation" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header p-4">
+                            <h5 class="modal-title fw-medium fs-5" id="staticBackdropLabel">Select location</h5>
+                            <button type="button" class="btn btn-icon btn-close shadow-none" data-bs-dismiss="modal" id="close-modal"><i class="ri-close-line fs-4 text-dark"></i></button>
+                        </div>
+                        <div class="modal-body p-4">
+                       <div class="text-center subcribe-form">
+        
+        <div class="form-icon position-relative mb-3">
+            <i class="ri-search-line icons fs-5"></i>
+            <input type="text" id="LocationName" onkeyup="filterCities()" onkeypress="return event.keyCode != 13;" class="form-control shadow rounded-pill text-sm bg-white-color ps-5" placeholder="Search city name"/>
+        </div>
+
+        <div class="d-grid">
+            <button type="button" onclick="getLocation(this)" class="btn btn-outline-primary rounded-pill mt-4">
+                <i class="ri-crosshair-2-line me-2"></i>  My Current Location
+            </button>
+        </div>
+
+    </div>
+
+                            <div class="mt-4" style="max-height: 300px; overflow-y: auto;">
+
+                                <p id="noCityMsg" class="text-muted text-center mt-3" style="display: none;">
+                                    <i class="ri-map-pin-time-line fs-1 d-block mb-2"></i>
+                                    City not found. <br>
+                                    We are not available in this city yet.
+                                </p>
+
+                                <ul class="list-unstyled mb-0" id="cityList">
+                                    <asp:Repeater ID="rptCities" runat="server">
+                                        <ItemTemplate>
+                                            <li class="border-top mt-3 pt-3 city-item">
+                                                <a href="javascript:void(0);" onclick="selectCity('<%# Eval("CityID") %>', '<%# Eval("CityName") %>')" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center">
+                                                    <span class="cityName"><%# Eval("CityName") %></span>
+                                                    <i class="ri-arrow-right-s-line"></i>
+                                                </a>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="GlobalSearchModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom p-3">
+                            <h5 class="modal-title" id="exampleModalLabel">Search Food or Restaurant</h5>
+                            <button type="button" class="btn btn-icon btn-close shadow-none" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <div class="search-bar p-0">
+                                <div id="search-form">
+                                    <div class="row g-2">
+                                        <div class="col-12">
+                                            <div class="input-group border rounded">
+                                                <span class="input-group-text bg-white border-0"><i class="ri-search-line text-muted"></i></span>
+
+                                                <asp:TextBox ID="txtGlobalSearch" runat="server" CssClass="form-control border-0" placeholder="E.g. Pizza, Burger, Hotel Name..."></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <asp:Button ID="btnGlobalSearch" runat="server" Text="Search" CssClass="btn btn-primary w-100" OnClick="btnGlobalSearch_Click" />
+                                        </div>
+
+                                      
+    <div id="searchSuggestions"
+         class="list-group position-absolute w-100 shadow"
+         style="top:100%; left:0; z-index:9999; display:none; max-height:240px; overflow-y:auto;">
+    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <header id="topnav" class="defaultscroll sticky bg-white">
+                <div class="container">
+                    <span class="logo d-flex align-items-center gap-3 mt-lg-3 mt-sm-3 mt-3 pt-2  pt-lg-2 pt-sm-2 mb-lg-0 mb-sm-4 mb-4">
+                      <a href="index.aspx" class="logo-name text-decoration-none">
+    <span class="logo-text">
+        <span class="logo-food">Food</span><span class="logo-store" style="color:#000;">Store</span>
+    </span>
+</a>
+
+
+                        <a href="#" class="menu-location" data-bs-toggle="modal" data-bs-target="#SearchLocation">
+                            <span class="btn btn-icon btn-sm btn-primary btn-pills d-sm-none d-inline-flex fs-6"><i class="ri-map-pin-line"></i></span>
+                            <span class="d-none d-sm-inline-flex align-items-center">
+                                <span class="btn btn-icon btn-sm btn-primary btn-pills fs-6"><i class="ri-map-pin-line"></i></span>
+                                <span class="ms-1">
+                                    <asp:Label ID="lblCurrentLocation" runat="server" Text="Select Location"></asp:Label>
+                                </span>
+                            </span>
+                        </a>
+                    </span>
+                    <div class="menu-extras">
+                        <div class="menu-item">
+                            <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <ul class="buy-button list-inline mb-0">
+                        <li class="list-inline-item mb-0">
+                            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#GlobalSearchModal" class="btn btn-icon btn-sm btn-pills btn-primary fs-6">
+                                <i class="ri-search-line"></i>
+                            </a>
+                        </li>
+
+                        <asp:Panel ID="pnlUser" runat="server" Visible="false" CssClass="list-inline-item mb-0 ms-1">
+                            <div class="dropdown dropdown-primary">
+                                <button type="button" class="btn btn-icon btn-sm btn-pills btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="assets/images/client/05.jpg" class="img-fluid rounded-pill" alt="">
+                                </button>
+                                <div class="dropdown-menu dd-menu dropdown-menu-end bg-white text-uppercase shadow rounded border-0 mt-3 py-3" style="width: 200px;">
+                                    <div class="d-flex align-items-center px-3">
+                                        <div class="ms-2">
+                                            <span class="d-block fw-bold text-dark">
+                                                <asp:Label ID="lblUserName" runat="server"></asp:Label></span>
+                                            <small class="text-muted">User</small>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider my-3 border-top"></div>
+                                    <a class="dropdown-item text-dark" href="UserProfile.aspx"><i class="ri-user-line align-middle me-1"></i>My Account</a>
+                                    <a class="dropdown-item text-dark" href="MyOrders.aspx"><i class="ri-list-ordered align-middle me-1"></i>My Orders</a>
+                                    <div class="dropdown-divider my-3 border-top"></div>
+
+                                    <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="dropdown-item text-dark">
+                                    <i class="ri-logout-circle-r-line align-middle me-1"></i> Logout
+                                    </asp:LinkButton>
+                                </div>
+                            </div>
+                        </asp:Panel>
+
+                        <asp:Panel ID="pnlGuest" runat="server" Visible="true" CssClass="list-inline-item mb-0 ms-1">
+                            <a href="seller/register.aspx" class="btn btn-sm btn-soft-primary">Add Your Store</a>
+                            <a href="seller/login.aspx" class="btn btn-sm btn-primary">Login</a>
+                        </asp:Panel>
+                    </ul>
+
+                    <div id="navigation">
+                        <ul class="navigation-menu nav-right">
+                          <li><a href="<%= BuildNavUrl("index.aspx") %>" class="sub-menu-item">Home</a></li>
+<li><a href="<%= BuildNavUrl("Restaurants.aspx") %>" class="sub-menu-item">Restaurants</a></li>
+<li><a href="<%= BuildNavUrl("Menu.aspx") %>" class="sub-menu-item">Menu</a></li>
+<li><a href="<%= BuildNavUrl("About.aspx") %>" class="sub-menu-item">About Us</a></li>
+<li><a href="<%= BuildNavUrl("Contact.aspx") %>" class="sub-menu-item">Contact</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+            <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="footer-py-60">
+                    <div class="row g-4">
+                        <div class="col-lg-4 col-12">
+                          <a href="index.aspx" class="logo-footer text-decoration-none">
+    <span class="footer-logo-text">
+        <span class="footer-logo-food">Food<span class="footer-logo-store text-white">Store</span></span>
+    </span>
+</a>
+
+                          <p class="mt-4">
+FoodStore is India’s growing local food discovery platform to find restaurants,
+cafes, street food & food stores near you with menus, reviews, ratings and
+accurate locations.
+</p>
+
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-12">
+                            <h5 class="footer-head">Quick Links</h5>
+                            <ul class="list-unstyled footer-list mt-4">
+                                <li>
+                                    <a href="index.aspx" class="text-foot">
+                                        <i class="ri-arrow-right-s-fill"></i>Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="restaurants.aspx" class="text-foot">
+                                        <i class="ri-arrow-right-s-fill"></i>Restaurants
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.aspx" class="text-foot">
+                                        <i class="ri-arrow-right-s-fill"></i>Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-12">
+                            <h5 class="footer-head">Explore</h5>
+                            <ul class="list-unstyled footer-list mt-4">
+                                <li>
+                                    <a href="menu.aspx" class="text-foot">
+                                        <i class="ri-arrow-right-s-fill"></i>Food Categories
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="restaurants.aspx" class="text-foot">
+                                        <i class="ri-arrow-right-s-fill"></i>Local Stores
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="about.aspx" class="text-foot">
+                                        <i class="ri-arrow-right-s-fill"></i>About Us
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <h5 class="footer-head">Contact</h5>
+                            <ul class="list-unstyled footer-list mt-4">
+                                <li class="d-flex align-items-center">
+                                    <i class="ri-map-pin-line fw-normal fs-4 text-primary"></i>
+                                    <span class="ms-2 text-white">
+                                        Ajmer, Rajasthan, India
+                                    </span>
+                                </li>
+                                <li class="d-flex align-items-center mt-3">
+                                    <i class="ri-mail-line fw-normal fs-4 text-primary"></i>
+                                    <span class="ms-2">
+                                        <a href="mailto:support@foodstore.in" class="text-white">
+                                            support@foodstore.in
+                                        </a>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-py-30 footer-bar">
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <p class="mb-0">
+                            © <%= DateTime.Now.Year %> FoodStore. Designed with
+                            <i class="ri-heart-fill text-danger"></i>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+            <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/libs/tiny-slider/min/tiny-slider.js"></script>
+            <script src="assets/js/app.js"></script>
+
+            <script>
+                // --- NEW FUNCTION: Select City and Keep Search Term ---
+                function selectCity(cityId, cityName) {
+                    // 1. Get current search term if available (e.g. 'pizza')
+                    var searchBox = document.getElementById('<%= txtGlobalSearch.ClientID %>');
+                    var searchTerm = "";
+                    if (searchBox) {
+                        searchTerm = searchBox.value.trim();
+                    }
+
+                    // 2. Build Base URL for Restaurants page
+                    var url = "Restaurants.aspx?cityid=" + encodeURIComponent(cityId) + "&cityname=" + encodeURIComponent(cityName);
+
+                    // 3. Append search term if it exists
+                    if (searchTerm !== "") {
+                        url += "&q=" + encodeURIComponent(searchTerm);
+                    }
+
+                    // 4. Redirect
+                    window.location.href = url;
+                }
+
+                // --- EXISTING: Filter Cities in Modal ---
+                function filterCities() {
+                    var input, filter, ul, li, span, i, txtValue;
+                    var foundCount = 0;
+
+                    input = document.getElementById('LocationName');
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("cityList");
+                    li = ul.getElementsByTagName('li');
+                    var noMsg = document.getElementById("noCityMsg");
+
+                    for (i = 0; i < li.length; i++) {
+                        span = li[i].getElementsByClassName("cityName")[0];
+                        if (span) {
+                            txtValue = span.textContent || span.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                li[i].style.display = "";
+                                foundCount++;
+                            } else {
+                                li[i].style.display = "none";
+                            }
+                        }
+                    }
+
+                    if (foundCount === 0) {
+                        noMsg.style.display = "block";
+                    } else {
+                        noMsg.style.display = "none";
+                    }
+                }
+            </script>
+
+            <script type="text/javascript">
+                function openLocationModal() {
+                    // Alert first
+                    alert("Please select your location first to search nearby food!");
+
+                    // Open Bootstrap Modal
+                    var myModal = new bootstrap.Modal(document.getElementById('SearchLocation'));
+                    myModal.show();
+                }
+            </script>
+
+            <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i class="ri-arrow-up-s-fill align-middle"></i></a>
+
+            <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/libs/tiny-slider/min/tiny-slider.js"></script>
+            <script src="assets/js/plugins.init.js"></script>
+            <script src="assets/js/app.js"></script>
+
+
+
+            <script>
+                // --- 1. GEOLOCATION LOGIC ---
+                function getLocation(btnElement) {
+                    if (navigator.geolocation) {
+                        // Button ka text/style change karein taaki user wait kare
+                        // Hum icon ko 'spin' class dete hain aur text change karte hain
+                        var originalText = btnElement.innerHTML;
+                        btnElement.innerHTML = '<i class="ri-loader-4-line ri-spin me-2"></i> Detecting...';
+                        btnElement.disabled = true; // Button disable karein taaki double click na ho
+
+                        navigator.geolocation.getCurrentPosition(
+                            function (position) { showPosition(position, btnElement, originalText); },
+                            function (error) { showError(error, btnElement, originalText); }
+                        );
+                    } else {
+                        alert("Geolocation is not supported by this browser.");
+                    }
+                }
+
+                function showPosition(position, btnElement, originalText) {
+                    var lat = position.coords.latitude;
+                    var long = position.coords.longitude;
+
+                    // 1. Check karein ki user ne Header wale Search Box mein kuch likha hai ya nahi
+                    var searchBox = document.getElementById('<%= txtGlobalSearch.ClientID %>');
+                    var searchTerm = "";
+
+                    if (searchBox) {
+                        searchTerm = searchBox.value.trim();
+                    }
+
+                    // 2. Base URL banayein (Location ke saath)
+                    // 'type=nearby' backend ko batayega ki distance calculate karna hai
+                    var url = "Restaurants.aspx?type=nearby&lat=" + lat + "&lng=" + long;
+
+                    // 3. Agar user ne kuch search kiya hai (e.g. Pizza), toh 'q' parameter add karein
+                    // Agar khali hai, toh 'q' add nahi hoga, aur Backend saare restaurants dikhayega
+                    if (searchTerm !== "") {
+                        url += "&q=" + encodeURIComponent(searchTerm);
+                    }
+
+                    // 4. Redirect karein
+                    window.location.href = url;
+                }
+
+                function showError(error, btnElement, originalText) {
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("User denied the request for Geolocation. Please enable location access.");
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("Location information is unavailable.");
+                            break;
+                        case error.TIMEOUT:
+                            alert("The request to get user location timed out.");
+                            break;
+                        case error.UNKNOWN_ERROR:
+                            alert("An unknown error occurred.");
+                            break;
+                    }
+                    // Button ko wapas normal karein agar error aaye
+                    if (btnElement) {
+                        btnElement.innerHTML = originalText;
+                        btnElement.disabled = false;
+                    }
+                }
+
+                // --- 2. EXISTING CITY SEARCH FILTER (Modal ke andar) ---
+                function filterCities() {
+                    var input, filter, ul, li, span, i, txtValue;
+                    var foundCount = 0;
+
+                    input = document.getElementById('LocationName');
+                    filter = input.value.toUpperCase();
+                    ul = document.getElementById("cityList");
+                    li = ul.getElementsByTagName('li');
+                    var noMsg = document.getElementById("noCityMsg");
+
+                    for (i = 0; i < li.length; i++) {
+                        // Repeater me <a> tag ke andar span class="cityName" hai
+                        var a = li[i].getElementsByTagName("a")[0];
+                        span = a.getElementsByClassName("cityName")[0];
+
+                        if (span) {
+                            txtValue = span.textContent || span.innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                li[i].style.display = "";
+                                foundCount++;
+                            } else {
+                                li[i].style.display = "none";
+                            }
+                        }
+                    }
+
+                    if (foundCount === 0) {
+                        noMsg.style.display = "block";
+                    } else {
+                        noMsg.style.display = "none";
+                    }
+                }
+
+                // --- 3. SELECT CITY LOGIC (Clicking from list) ---
+                function selectCity(cityId, cityName) {
+                    // Global search box check karein
+                    var searchBox = document.getElementById('<%= txtGlobalSearch.ClientID %>');
+        var searchTerm = "";
+        if (searchBox) {
+            searchTerm = searchBox.value.trim();
+        }
+
+        var url = "Restaurants.aspx?cityid=" + encodeURIComponent(cityId) + "&cityname=" + encodeURIComponent(cityName);
+
+        // Agar search term hai to saath le jao
+        if (searchTerm !== "") {
+            url += "&q=" + encodeURIComponent(searchTerm);
+        }
+
+        window.location.href = url;
+    }
+</script>
+
+
+            <script>
+                (function () {
+                    var tb = document.getElementById('<%= txtGlobalSearch.ClientID %>');
+                    var box = document.getElementById('searchSuggestions');
+                    var timer = null;
+
+                    if (!tb || !box) return;
+
+                    function hideBox() {
+                        box.style.display = "none";
+                        box.innerHTML = "";
+                    }
+
+                    function renderItems(items) {
+                        if (!items || items.length === 0) {
+                            hideBox();
+                            return;
+                        }
+
+                        box.innerHTML = "";
+                        items.forEach(function (x) {
+                            var a = document.createElement("a");
+                            a.href = "javascript:void(0)";
+                            a.className = "list-group-item list-group-item-action d-flex justify-content-between align-items-center";
+
+                            // left text
+                            var left = document.createElement("span");
+                            left.textContent = x.text;
+
+                            // right badge type
+                            var badge = document.createElement("span");
+                            badge.className = "badge bg-light text-dark border";
+                            badge.textContent = x.type; // Cafe / Dish
+
+                            a.appendChild(left);
+                            a.appendChild(badge);
+
+                            a.addEventListener("click", function () {
+                                tb.value = x.text;
+                                hideBox();
+                                tb.focus();
+                            });
+
+                            box.appendChild(a);
+                        });
+
+                        box.style.display = "block";
+                    }
+
+                    async function fetchSuggestions(q) {
+                        // cityid agar URL me hai to pass kar denge
+                        var params = new URLSearchParams(window.location.search);
+                        var cityid = params.get("cityid") || "";
+
+                        var url = "SearchSuggestions.ashx?q=" + encodeURIComponent(q) + "&cityid=" + encodeURIComponent(cityid);
+
+                        try {
+                            const res = await fetch(url, { method: "GET" });
+                            if (!res.ok) return [];
+                            return await res.json();
+                        } catch (e) {
+                            return [];
+                        }
+                    }
+
+                    tb.addEventListener("keyup", function (e) {
+                        var q = tb.value.trim();
+
+                        // very small input => hide
+                        if (q.length < 1) { // 1 character se hi suggestions chahiye (P)
+                            hideBox();
+                            return;
+                        }
+
+                        clearTimeout(timer);
+                        timer = setTimeout(async function () {
+                            var data = await fetchSuggestions(q);
+                            renderItems(data);
+                        }, 150);
+                    });
+
+                    // click outside => close
+                    document.addEventListener("click", function (e) {
+                        if (e.target !== tb && !box.contains(e.target)) {
+                            hideBox();
+                        }
+                    });
+
+                    // ESC => close
+                    tb.addEventListener("keydown", function (e) {
+                        if (e.key === "Escape") hideBox();
+                    });
+                })();
+</script>
+
+
+        </div>
+    </form>
+</body>
+</html>
