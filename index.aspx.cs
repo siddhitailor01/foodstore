@@ -14,7 +14,6 @@ public partial class index : System.Web.UI.Page
 
    protected void Page_Load(object sender, EventArgs e)
 {
-    // ✅ SEARCH SESSION SYNC (Index bhi)
     if (Request.QueryString["q"] != null)
     {
         string q = Request.QueryString["q"].Trim();
@@ -25,11 +24,9 @@ public partial class index : System.Web.UI.Page
     }
     else
     {
-        // URL me q nahi => clear (jab user chip se hata de)
         Session.Remove("LastSearch");
     }
 
-    // ✅ LOCATION SESSION SYNC (optional but recommended)
     if (Request.QueryString["type"] == "nearby" &&
         !string.IsNullOrEmpty(Request.QueryString["lat"]) &&
         !string.IsNullOrEmpty(Request.QueryString["lng"]))
@@ -60,12 +57,10 @@ public partial class index : System.Web.UI.Page
 }
 
 
-    // 1. Categories Slider ke liye Data
     private void BindCategories()
     {
         using (SqlConnection con = new SqlConnection(strCon))
         {
-            // Assuming IsActive column exists based on your schema
             string query = "SELECT * FROM tbl_Categories WHERE IsActive = 1";
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
