@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+
+    
+<!-- Mirrored from shreethemes.in/orderit/layouts/shop-myaccount.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Jan 2026 09:00:19 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <title>Orderit - Online Food Order and Delivery Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Premium Bootstrap 5 Landing Page Template" />
+        <meta name="keywords" content="Creative, Modern, Multi-uses, Business, Corporate, Saas, Software" />
+        <meta name="author" content="Shreethemes" />
+        <meta name="email" content="support@shreethemes.in" />
+        <meta name="website" content="https://shreethemes.in/" />
+        <meta name="Version" content="v1.0.0" />
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+        <!-- Css -->
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" class="theme-opt" rel="stylesheet" type="text/css" />
+        <!-- Icons Css -->
+        <link href="assets/libs/remixicon/fonts/remixicon.css" rel="stylesheet" type="text/css" />
+        <!-- Style Css-->
+        <link href="assets/css/style.min.css" id="color-opt" class="theme-opt" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader -->
+        
+        <!-- Navbar Start -->
+        <header id="topnav" class="defaultscroll sticky">
+            <div class="container">
+                <!-- Logo container-->
+                <span class="logo inline-flex">
+                    <a href="index.html" class="logo-name">
+                        <span class="logo-light-mode">
+                            <img src="assets/images/logo-dark.png" class="l-dark" alt="">
+                            <img src="assets/images/logo-light.png" class="l-light" alt="">
+                        </span>
+                        <img src="assets/images/logo-light.png" class="logo-dark-mode" alt="">
+                    </a>
+
+                    <a href="#" class="menu-location" data-bs-toggle="modal" data-bs-target="#SearchLocation">
+                        <span class="btn btn-icon btn-sm btn-primary btn-pills d-sm-none d-inline-flex fs-6"><i class="ri-map-pin-line"></i></span>
+                        <span class="d-none d-sm-inline-flex align-items-center">
+                            <span class="btn btn-icon btn-sm btn-primary btn-pills fs-6"><i class="ri-map-pin-line"></i></span>
+                            <span class="ms-1">Location</span>
+                        </span>
+                    </a>
+                </span>
+
+                <!-- End Logo container-->
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <!-- Mobile menu toggle-->
+                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                        <!-- End mobile menu toggle-->
+                    </div>
+                </div>
+
+                <!--Login button Start-->
+                <ul class="buy-button list-inline mb-0">
+                    <li class="list-inline-item mb-0">
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-icon btn-sm btn-pills btn-primary fs-6 dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="ri-shopping-cart-line"></i></button>
+                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white shadow rounded border-0 mt-3 p-4" style="width: 300px;">
+                                <div class="pb-4">
+                                    <a href="javascript:void(0)" class="d-flex align-items-center">
+                                        <img src="assets/images/dishes/chicken-nuggets-with-french-fries.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
+                                        <div class="flex-1 text-start ms-3">
+                                            <h6 class="text-dark fw-normal mb-0">Chicken with French Fries</h6>
+                                            <p class="text-muted text-sm mb-0">$119 X 2</p>
+                                        </div>
+                                        <h6 class="text-dark fw-normal mb-0">$238</h6>
+                                    </a>
+
+                                    <a href="javascript:void(0)" class="d-flex align-items-center mt-4">
+                                        <img src="assets/images/dishes/farfalle-pasta-with-meatballs.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
+                                        <div class="flex-1 text-start ms-3">
+                                            <h6 class="text-dark fw-normal mb-0">Pasta with Meatballs</h6>
+                                            <p class="text-muted text-sm mb-0">$99 X 1</p>
+                                        </div>
+                                        <h6 class="text-dark fw-normal mb-0">$99</h6>
+                                    </a>
+
+                                    <a href="javascript:void(0)" class="d-flex align-items-center mt-4">
+                                        <img src="assets/images/dishes/delicious-burger.jpg" class="shadow rounded" style="max-height: 64px;" alt="">
+                                        <div class="flex-1 text-start ms-3">
+                                            <h6 class="text-dark fw-normal mb-0">Flavor Fresh Burgers</h6>
+                                            <p class="text-muted text-sm mb-0">$49 X 2</p>
+                                        </div>
+                                        <h6 class="text-dark fw-normal mb-0">$98</h6>
+                                    </a>
+                                </div>
+
+                                <div class="d-flex align-items-center justify-content-between pt-3 border-top">
+                                    <h6 class="text-dark fw-normal mb-0">Total ($):</h6>
+                                    <h6 class="text-dark fw-normal mb-0">$435</h6>
+                                </div>
+
+                                <div class="mt-2 text-center">
+                                    <a href="javascript:void(0)" class="btn btn-sm btn-primary w-100 me-2">View Cart</a>
+                                </div>
+                                <p class="text-muted text-sm text-start mt-1 mb-0">*T&C Apply</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-inline-item mb-0">
+                        <div class="dropdown dropdown-primary">
+                            <button type="button" class="btn btn-icon btn-sm btn-pills btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/client/1.jpg" class="img-fluid" alt=""></button>
+                            <div class="dropdown-menu dd-menu dropdown-menu-end bg-white text-uppercase shadow rounded border-0 mt-3 py-3" style="width: 200px;">
+                                <div class="d-flex align-items-center px-3">
+                                    <img src="assets/images/client/1.jpg" class="rounded-pill avatar avatar-md-sm img-thumbnail shadow" alt="">
+                                    <div class="ms-2">
+                                        <a href="#" class="text-dark primary fw-normal text-xs mb-0">Calvin Carlo</a>
+                                        <p class="text-muted text-xs mb-0">My Account</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-2">
+                                    <a class="dropdown-item d-flex align-items-center text-dark" href="#"><i class="ri-user-line fs-6 align-middle me-1"></i> Account</a>
+                                    <a class="dropdown-item d-flex align-items-center text-dark" href="#"><i class="ri-list-ordered fs-6 align-middle me-1"></i> Order History</a>
+                                    <a class="dropdown-item d-flex align-items-center text-dark" href="#"><i class="ri-settings-3-line fs-6 align-middle me-1"></i> Setting</a>
+                                    <div class="dropdown-divider my-3 border-top"></div>
+                                    <a class="dropdown-item d-flex align-items-center text-dark" href="#"><i class="ri-logout-circle-r-line fs-6 align-middle me-1"></i> Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--Login button End-->
+
+                <div id="navigation">
+                    <!-- Navigation Menu-->   
+                    <ul class="navigation-menu nav-light nav-right">
+                        <li class="has-submenu parent-menu-item">
+                            <a href="javascript:void(0)">Home</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="index.html" class="sub-menu-item">Index One</a></li>
+                                <li><a href="index-two.html" class="sub-menu-item">Index Two</a></li>
+                                <li><a href="index-three.html" class="sub-menu-item">Index Three</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu parent-menu-item">
+                            <a href="javascript:void(0)">Shop</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="shop-menu.html" class="sub-menu-item">Menu</a></li>
+                                <li><a href="shop-item-detail.html" class="sub-menu-item">Item Detail</a></li>
+                                <li><a href="shop-cart.html" class="sub-menu-item">Shop Cart</a></li>
+                                <li><a href="shop-checkouts.html" class="sub-menu-item">Checkouts</a></li>
+                                <li><a href="shop-myaccount.html" class="sub-menu-item">My Account</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="offers.html" class="sub-menu-item">Offers</a></li>
+
+                        <li class="has-submenu parent-menu-item">
+                            <a href="javascript:void(0)"> Restaurants</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="restaurants.html" class="sub-menu-item">Restaurants</a></li>
+                                <li><a href="single-restaurant.html" class="sub-menu-item">Restaurant Detail</a></li>
+                            </ul>  
+                        </li>
+
+                        <li class="has-submenu parent-parent-menu-item">
+                            <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li class="has-submenu parent-menu-item">
+                                    <a href="javascript:void(0)">Blog</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="blogs.html" class="sub-menu-item">Blogs</a></li>
+                                        <li><a href="blog-sidebar.html" class="sub-menu-item">Blog Sidebar</a></li>
+                                        <li><a href="blog-detail.html" class="sub-menu-item">Blog Detail</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="login.html" class="sub-menu-item">Login</a></li>
+                                <li><a href="signup.html" class="sub-menu-item">Signup</a></li>
+                                <li><a href="forgot-password.html" class="sub-menu-item">Forgot Password</a></li>
+                                <li><a href="comingsoon.html" class="sub-menu-item">Coming Soon</a></li>
+                                <li><a href="maintenance.html" class="sub-menu-item">Maintenance</a></li>
+                                <li><a href="error.html" class="sub-menu-item">Error</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="contactus.html" class="sub-menu-item">Contact Us</a></li>
+                    </ul><!--end navigation menu-->
+                </div><!--end navigation-->
+            </div><!--end container-->
+        </header><!--end header-->
+        <!-- Navbar End -->
+
+        <div class="modal fade" id="SearchLocation" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header p-4">
+                        <h1 class="modal-title fw-medium fs-5" id="staticBackdropLabel">Select location</h1>
+                        <button type="button" class="btn btn-icon btn-close shadow-none" data-bs-dismiss="modal" id="close-modal"><i class="ri-close-line fs-4 text-dark"></i></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <div class="text-center subcribe-form">
+                            <form>
+                                <div class="form-icon position-relative">
+                                    <i class="ri-search-line icons fs-5"></i>
+                                    <input type="text" id="LocationName" name="name" class="form-control shadow rounded-pill text-sm bg-white-color ps-5" required="" placeholder="Search city name">
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="mt-4">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="#" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center"><span>London</span> <i class="ri-arrow-right-s-line"></i></a></li>
+                                <li class="border-top mt-3 pt-3"><a href="#" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center"><span>New York</span> <i class="ri-arrow-right-s-line"></i></a></li>
+                                <li class="border-top mt-3 pt-3"><a href="#" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center"><span>Paris</span> <i class="ri-arrow-right-s-line"></i></a></li>
+                                <li class="border-top mt-3 pt-3"><a href="#" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center"><span>Tokyo</span> <i class="ri-arrow-right-s-line"></i></a></li>
+                                <li class="border-top mt-3 pt-3"><a href="#" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center"><span>Singapore</span> <i class="ri-arrow-right-s-line"></i></a></li>
+                                <li class="border-top mt-3 pt-3"><a href="#" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center"><span>Rome</span> <i class="ri-arrow-right-s-line"></i></a></li>
+                                <li class="border-top mt-3 pt-3"><a href="#" class="text-dark fw-normal h5 d-flex justify-content-between align-items-center"><span>Madrid</span> <i class="ri-arrow-right-s-line"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Start Hero -->
+        <section class="bg-half-170 d-table w-100" style="background: url('assets/images/bg/pages.jpg') center center;">
+            <div class="bg-overlay opacity-8"></div>
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                    <div class="col-12">
+                        <div class="title-heading text-center">
+                            <i class="ri-dashboard-line text-white fs-2"></i>
+                            <h3 class="heading sub-heading fw-semibold mb-0 sub-heading text-white title-dark mt-2">User Account</h3>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="position-middle-bottom">
+                    <nav aria-label="breadcrumb" class="d-block">
+                        <ul class="breadcrumb breadcrumb-muted mb-0 p-0">
+                            <li class="breadcrumb-item"><a href="index.html">Orderit</a></li>
+                            <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">My Account</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div><!--end container-->
+        </section>
+        <!-- End Hero -->
+
+        <!-- Start -->
+        <section class="section">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center">
+                            <img src="assets/images/client/1.jpg" class="avatar avatar-md-md rounded-circle" alt="">
+                            <div class="ms-3">
+                                <h6 class="text-muted mb-0">Hello,</h6>
+                                <h5 class="mb-0">Calvin Carlo</h5>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-md-8 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                        <p class="text-muted mb-0">We offer flexible delivery options tailored to your needs—whether it's urgent same-day supplies, or specialty products.</p>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-md-4 mt-4 pt-2">
+                        <ul class="nav nav-pills nav-justified flex-column rounded shadow p-3 mb-0" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link rounded p- active" id="dashboard" data-bs-toggle="pill" href="#dash" role="tab" aria-controls="dash" aria-selected="false">
+                                    <div class="text-start">
+                                        <h6 class="mb-0"><i class="ri-dashboard-line h5 align-middle me-2 mb-0"></i> Dashboard</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                            
+                            <li class="nav-item mt-2">
+                                <a class="nav-link rounded p-" id="order-history" data-bs-toggle="pill" href="#orders" role="tab" aria-controls="orders" aria-selected="false">
+                                    <div class="text-start">
+                                        <h6 class="mb-0"><i class="ri-list-check h5 align-middle me-2 mb-0"></i> Orders</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                            
+                            <li class="nav-item mt-2">
+                                <a class="nav-link rounded p-" id="download" data-bs-toggle="pill" href="#down" role="tab" aria-controls="down" aria-selected="false">
+                                    <div class="text-start">
+                                        <h6 class="mb-0"><i class="ri-download-line h5 align-middle me-2 mb-0"></i> Downloads</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                            
+                            <li class="nav-item mt-2">
+                                <a class="nav-link rounded p-" id="addresses" data-bs-toggle="pill" href="#address" role="tab" aria-controls="address" aria-selected="false">
+                                    <div class="text-start">
+                                        <h6 class="mb-0"><i class="ri-road-map-line h5 align-middle me-2 mb-0"></i> Addresses</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                            
+                            <li class="nav-item mt-2">
+                                <a class="nav-link rounded p-" id="account-details" data-bs-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="false">
+                                    <div class="text-start">
+                                        <h6 class="mb-0"><i class="ri-user-line h5 align-middle me-2 mb-0"></i> Account Details</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                            
+                            <li class="nav-item mt-2">
+                                <a class="nav-link rounded p-" role="tab" href="login.html" aria-selected="false">
+                                    <div class="text-start">
+                                        <h6 class="mb-0"><i class="ri-logout-circle-r-line h5 align-middle me-2 mb-0"></i> Logout</h6>
+                                    </div>
+                                </a><!--end nav link-->
+                            </li><!--end nav item-->
+                        </ul><!--end nav pills-->
+                    </div><!--end col-->
+
+                    <div class="col-md-8 col-12 mt-4 pt-2">
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active shadow rounded p-4" id="dash" role="tabpanel" aria-labelledby="dashboard">
+                                <h6 class="text-muted fw-normal">Hello <span class="text-dark">calvin_carlo</span> (not <span class="text-dark">calvin_carlo</span>? <a href="javascript:void(0)" class="text-danger">Log out</a>)</h6>
+
+                                <h6 class="text-muted fw-normal mb-0">From your account dashboard you can view your <a href="javascript:void(0)" class="text-danger">recent orders</a>, manage your <a href="javascript:void(0)" class="text-danger">shipping and billing addresses</a>, and <a href="javascript:void(0)" class="text-danger">edit your password and account details</a>.</h6>
+                            </div><!--end teb pane-->
+
+                            <div class="tab-pane fade shadow rounded p-4" id="orders" role="tabpanel" aria-labelledby="order-history">
+                                <div class="table-responsive bg-white shadow rounded">
+                                    <table class="table mb-0 table-center table-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="border-bottom fw-medium">Order no.</th>
+                                                <th scope="col" class="border-bottom fw-medium">Date</th>
+                                                <th scope="col" class="border-bottom fw-medium">Status</th>
+                                                <th scope="col" class="border-bottom fw-medium">Total</th>
+                                                <th scope="col" class="border-bottom fw-medium">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="fw-normal">7107</th>
+                                                <td class="fw-normal">1st November 2021</td>
+                                                <td class="text-success fw-normal">Delivered</td>
+                                                <td class="fw-normal">$ 320 <span class="text-muted">for 2items</span></td>
+                                                <td class="fw-normal"><a href="javascript:void(0)" class="text-primary">View <i class="ri-arrow-right-line"></i></a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row" class="fw-normal">8007</th>
+                                                <td class="fw-normal">4th November 2021</td>
+                                                <td class="text-muted fw-normal">Processing</td>
+                                                <td class="fw-normal">$ 800 <span class="text-muted">for 1item</span></td>
+                                                <td class="fw-normal"><a href="javascript:void(0)" class="text-primary">View <i class="ri-arrow-right-line"></i></a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row" class="fw-normal">8008</th>
+                                                <td class="fw-normal">4th November 2021</td>
+                                                <td class="text-danger fw-normal">Canceled</td>
+                                                <td class="fw-normal">$ 800 <span class="text-muted">for 1item</span></td>
+                                                <td class="fw-normal"><a href="javascript:void(0)" class="text-primary">View <i class="ri-arrow-right-line"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div><!--end teb pane-->
+
+                            <div class="tab-pane fade shadow rounded p-4" id="down" role="tabpanel" aria-labelledby="download">
+                                <div class="table-responsive bg-white shadow rounded">
+                                    <table class="table mb-0 table-center table-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" class="border-bottom fw-medium">Product Name</th>
+                                                <th scope="col" class="border-bottom fw-medium">Description</th>
+                                                <th scope="col" class="border-bottom fw-medium">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row" class="fw-normal">Quick heal</th>
+                                                <td class="text-muted fw-normal">It is said that song composers of the past <br> used dummy texts as lyrics when writing <br> melodies in order to have a 'ready-made' <br> text to sing with the melody.</td>
+                                                <td class="text-success fw-normal">Downloaded</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div><!--end teb pane-->
+
+                            <div class="tab-pane fade shadow rounded p-4" id="address" role="tabpanel" aria-labelledby="addresses">
+                                <h6 class="text-muted fw-normal mb-0">The following addresses will be used on the checkout page by default.</h6>
+
+                                <div class="row">
+                                    <div class="col-lg-6 mt-4 pt-2">
+                                        <div class="d-flex align-items-center mb-4 justify-content-between">
+                                            <h5 class="mb-0 fw-medium">Billing Address:</h5>
+                                            <a href="javascript:void(0)" class="text-primary h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-original-title="Edit"><i class="ri-edit-line align-middle"></i></a>
+                                        </div>
+                                        <div class="pt-4 border-top">
+                                            <p class="h6">Calvin Carlo</p>
+                                            <p class="h6 text-muted fw-normal">C/54 Northwest Freeway, </p>
+                                            <p class="h6 text-muted fw-normal">Suite 558,</p>
+                                            <p class="h6 text-muted fw-normal">Houston, USA 485</p>
+                                            <p class="h6 text-muted fw-normal mb-0">+123 897 5468</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 mt-4 pt-2">
+                                        <div class="d-flex align-items-center mb-4 justify-content-between">
+                                            <h5 class="mb-0 fw-medium">Shipping Address:</h5>
+                                            <a href="javascript:void(0)" class="text-primary h5 mb-0" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-original-title="Edit"><i class="ri-edit-line align-middle"></i></a>
+                                        </div>
+                                        <div class="pt-4 border-top">
+                                            <p class="h6">Calvin Carlo</p>
+                                            <p class="h6 text-muted fw-normal">C/54 Northwest Freeway, </p>
+                                            <p class="h6 text-muted fw-normal">Suite 558,</p>
+                                            <p class="h6 text-muted fw-normal">Houston, USA 485</p>
+                                            <p class="h6 text-muted fw-normal mb-0">+123 897 5468</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!--end teb pane-->
+
+                            <div class="tab-pane fade shadow rounded p-4" id="account" role="tabpanel" aria-labelledby="account-details">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-normal">First Name</label>
+                                                <div class="form-icon position-relative">
+                                                    <i class="ri-user-line position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                                                    <input name="name" id="first-name" type="text" class="form-control ps-5" value="Calvin">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-normal">Last Name</label>
+                                                <div class="form-icon position-relative">
+                                                    <i class="ri-user-follow-line icons position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                                                    <input name="name" id="last-name" type="text" class="form-control ps-5" value="Carlo">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-normal">Your Email</label>
+                                                <div class="form-icon position-relative">
+                                                    <i class="ri-mail-line icons position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                                                    <input name="email" id="email" type="email" class="form-control ps-5" value="calvincarlo@gmail.com">
+                                                </div>
+                                            </div> 
+                                        </div><!--end col-->
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-normal">Display Name</label>
+                                                <div class="form-icon position-relative">
+                                                    <i class="ri-shield-user-line icons position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                                                    <input name="name" id="display-name" type="text" class="form-control ps-5" value="calvin_carlo">
+                                                </div>
+                                            </div> 
+                                        </div><!--end col-->
+
+                                        <div class="col-lg-12 mt-2 mb-0">
+                                            <button class="btn btn-primary">Save Changes</button>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </form>
+
+                                <h5 class="mt-4">Change password :</h5>
+                                <form>
+                                    <div class="row mt-3">
+                                        <div class="col-lg-12">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-normal">Old password :</label>
+                                                <div class="form-icon position-relative">
+                                                    <i class="ri-key-line icons position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                                                    <input type="password" class="form-control ps-5" placeholder="Old password" required="">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+    
+                                        <div class="col-lg-12">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-normal">New password :</label>
+                                                <div class="form-icon position-relative">
+                                                    <i class="ri-key-line icons position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                                                    <input type="password" class="form-control ps-5" placeholder="New password" required="">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+    
+                                        <div class="col-lg-12">
+                                            <div class="mb-3">
+                                                <label class="form-label fw-normal">Re-type New password :</label>
+                                                <div class="form-icon position-relative">
+                                                    <i class="ri-key-line icons position-absolute top-50 start-0 translate-middle-y ms-3 fs-6"></i>
+                                                    <input type="password" class="form-control ps-5" placeholder="Re-type New password" required="">
+                                                </div>
+                                            </div>
+                                        </div><!--end col-->
+    
+                                        <div class="col-lg-12 mt-2 mb-0">
+                                            <button class="btn btn-primary">Save Password</button>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+                                </form>
+                            </div><!--end teb pane-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- End -->
+
+        <!-- Footer Start -->
+        <footer class="footer">    
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="footer-py-60">
+                            <div class="row g-4">
+                                <div class="col-lg-5 col-12">
+                                    <a href="#" class="logo-footer">
+                                        <img src="assets/images/logo-light.png" alt="">
+                                    </a>
+                                    <p class="mt-4">We offer flexible delivery options tailored to your needs—whether it's urgent same-day supplies, or specialty products.</p>
+                            
+                                    <div class="mt-3">
+                                        <a href="javascript:void(0)">
+                                            <img src="assets/images/playstore.png" class="m-1" height="40" alt="">
+                                        </a>
+                                
+                                        <a href="javascript:void(0)">
+                                            <img src="assets/images/appstore.png" class="m-1" height="40" alt="">
+                                        </a>
+                                    </div>
+                                </div><!--end col-->
+                        
+                                <div class="col-lg-2 col-md-4 col-12">
+                                    <h5 class="footer-head">Know More</h5>
+                                    <ul class="list-unstyled footer-list mt-4">
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="ri-arrow-right-s-fill"></i> About Us</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Services</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="ri-arrow-right-s-fill"></i> FAQs</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Teams</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Blogs</a></li>
+                                        <li><a href="javascript:void(0)" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Contact Us</a></li>
+                                    </ul>
+                                </div><!--end col-->
+
+                                <div class="col-lg-5 col-md-8 col-12">
+                                    <div class="row g-4">
+                                        <div class="col-md-6 col-12">
+                                            <h5 class="footer-head">Follow us on</h5>
+                                            <ul class="list-unstyled footer-list mt-4">
+                                                <li><a href="https://dribbble.com/shreethemes" target="_blank" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Dribbble</a></li>
+                                                <li><a href="https://www.behance.net/shreethemes" target="_blank" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Behance</a></li>
+                                                <li><a href="http://linkedin.com/company/shreethemes" target="_blank" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Linkedin</a></li>
+                                                <li><a href="https://www.facebook.com/shreethemes" target="_blank" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Facebook</a></li>
+                                                <li><a href="https://www.instagram.com/shreethemes/" target="_blank" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Instagram</a></li>
+                                                <li><a href="https://x.com/shreethemes" target="_blank" class="text-foot"><i class="ri-arrow-right-s-fill"></i> Twitter</a></li>
+                                            </ul>
+                                        </div><!--end col-->
+            
+                                        <div class="col-md-6 col-12">
+                                            <h5 class="footer-head">Contact Us</h5>
+                                            <ul class="list-unstyled footer-list mt-4">
+                                                <li class="d-flex align-items-center">
+                                                    <i class="ri-mail-line fw-normal fs-4 text-primary"></i>
+                                                    <span class="ms-2">
+                                                        <small class="d-block">Looking for collaboration?</small>
+                                                        <a href="mailto:contact@example.com" class="text-white">contact@example.com</a>
+                                                    </span>
+                                                </li>
+                                        
+                                                <li class="d-flex align-items-center mt-3">
+                                                    <i class="ri-map-pin-line fw-normal fs-4 text-primary"></i>
+                                                    <span class="ms-2">
+                                                        <small class="d-block">Visit our Local Store</small>
+                                                        <span class="text-white">2800 Houston, TX 77056, <br> United States</span>
+                                                    </span>
+                                                </li>
+                                        
+                                                <li class="d-flex align-items-center mt-3">
+                                                    <i class="ri-phone-line fw-normal fs-4 text-primary"></i>
+                                                    <span class="ms-2">
+                                                        <small class="d-block">Monday-Sunday: 9am-11pm</small>
+                                                        <a href="tel:+152534-468-854" class="text-white">+152 534-468-854</a>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div><!--end col-->
+                                    </div>
+                                </div>
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="footer-py-30 footer-bar">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <div class="text-md-start">
+                                <p class="mb-0">© <script>document.write(new Date().getFullYear()) </script> Orderit. Design with <i class="ri-heart-fill text-danger"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                            </div>
+                        </div><!--end col-->
+
+                        <div class="col-md-4">
+                            <ul class="list-unstyled footer-list terms-service text-md-end mb-0">
+                                <li class="list-inline-item mb-0"><a href="javascript:void(0)" class="text-foot me-2"><i class="ri-arrow-right-s-fill"></i> Privacy</a></li>
+                                <li class="list-inline-item mb-0"><a href="javascript:void(0)" class="text-foot me-2"><i class="ri-arrow-right-s-fill"></i> Terms</a></li>
+                                <li class="list-inline-item mb-0"><a href="javascript:void(0)" class="text-foot me-2"><i class="ri-arrow-right-s-fill"></i> Login</a></li>
+                            </ul>
+                        </div><!--end col-->
+                    </div><!--end row-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i class="ri-arrow-up-s-fill align-middle"></i></a>
+        <!-- Back to top -->
+
+        <!-- Javascript -->
+        <!-- JAVASCRIPT -->
+        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/plugins.init.js"></script><!--Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc.-->
+        <script src="assets/js/app.js"></script><!--Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+    </body>
+
+
+<!-- Mirrored from shreethemes.in/orderit/layouts/shop-myaccount.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 20 Jan 2026 09:00:19 GMT -->
+</html>
