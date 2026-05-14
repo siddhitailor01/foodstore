@@ -75,18 +75,14 @@ public partial class index : System.Web.UI.Page
         }
     }
 
-    // 2. Restaurants List ke liye Data (ListView)
     private void BindRestaurants()
     {
-        // ✅ Session City
         string cityId = (Session["CityID"] != null) ? Session["CityID"].ToString() : "";
 
-        // ✅ Session Nearby
         string nearType = (Session["NearType"] != null) ? Session["NearType"].ToString() : "";
         string userLat = (Session["UserLat"] != null) ? Session["UserLat"].ToString() : "";
         string userLng = (Session["UserLng"] != null) ? Session["UserLng"].ToString() : "";
 
-        // ✅ Session Search
         string searchText = (Session["LastSearch"] != null) ? Session["LastSearch"].ToString().Trim() : "";
 
         if (!string.IsNullOrEmpty(userLat)) userLat = userLat.Replace(",", ".");
@@ -101,7 +97,6 @@ public partial class index : System.Web.UI.Page
             string groupByExtra = "";
             string orderBy = " ORDER BY AvgRating DESC, r.RestaurantID DESC ";
 
-            // ✅ Search filter (only if searchText exists)
             string searchWhere = "";
             if (!string.IsNullOrWhiteSpace(searchText))
             {
@@ -188,7 +183,6 @@ public partial class index : System.Web.UI.Page
 
     public string GetCategoryUrl(object categoryId)
     {
-        // Basic URL with Category ID (catid match hona chahiye Restaurants.aspx.cs se)
         string url = "Restaurants.aspx?catid=" + categoryId;
 
         // 2. FILTER FIX: Agar user ne City select ki hai, to use bhi URL me add karo
